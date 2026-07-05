@@ -1,0 +1,42 @@
+.payment-option:has(input:checked) {
+  border-color: var(--pink-main) !important;
+  background: var(--pink-light) !important;
+  box-shadow: 0 0 0 3px rgba(245, 140, 161, 0.18);
+}
+
+.payment-option:hover {
+  border-color: var(--pink-soft) !important;
+  background: var(--pink-light) !important;
+}
+
+.gcash-upload-zone {
+  border: 2px dashed var(--green-main);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  background: #fff;
+  margin-top: 0.75rem;
+}
+
+.gcash-upload-zone:hover,
+.gcash-upload-zone.dragover {
+  border-color: var(--green-deep);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.gcash-upload-zone.has-file {
+  border-style: solid;
+  border-color: var(--green-deep);
+}
+
+.status-select {
+  padding: 0.35rem 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--pink-light);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "something-floral-ph",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Something Floral PH — Pop-Up Flower Shop",
+  "scripts": {
+    "install:client": "npm install --prefix client",
+    "dev": "npm run dev --prefix client",
+    "build": "npm run build --prefix client",
+    "api": "php -S localhost:8000 -t ."
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

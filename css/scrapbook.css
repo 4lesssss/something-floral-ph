@@ -1,0 +1,838 @@
+/* ============================================================
+   Something Floral PH — Scrapbook / IG Pop-Up Shop Aesthetic
+   Soft pastel pink · bold black type · tape · doodles · stickers
+   ============================================================ */
+
+:root {
+  --bg-pastel: #fde4ec;
+  --bg-paper: #fffbf9;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --pink-accent: #ff8fab;
+  --pink-hot: #ff6b9d;
+  --tape-yellow: rgba(255, 236, 179, 0.92);
+  --tape-pink: rgba(255, 200, 221, 0.92);
+  --tape-mint: rgba(200, 240, 220, 0.92);
+  --sticker-pink: #ffb3c6;
+  --shadow-paper: 2px 4px 0 rgba(26, 26, 26, 0.06), 0 8px 24px rgba(26, 26, 26, 0.08);
+  --shadow-lift: 4px 8px 0 rgba(26, 26, 26, 0.08), 0 16px 40px rgba(255, 107, 157, 0.15);
+  --font-display: "Archivo Black", "Arial Black", sans-serif;
+  --font-body: "DM Sans", "Segoe UI", sans-serif;
+  --radius-scrap: 24px;
+  --radius-pill: 999px;
+}
+
+/* --- Paper texture background (site-wide) --- */
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background-color: var(--bg-pastel);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 10% 0%, rgba(255, 255, 255, 0.55), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 100%, rgba(255, 182, 193, 0.35), transparent),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+}
+
+::selection {
+  background: var(--sticker-pink);
+  color: var(--ink);
+}
+
+/* --- Bold black typography --- */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+  text-transform: none;
+}
+
+h1 { font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.05; }
+h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+h3 { font-family: var(--font-body); font-weight: 800; font-size: 1.15rem; color: var(--ink); }
+
+a {
+  color: var(--ink);
+}
+
+a:hover {
+  color: var(--pink-hot);
+}
+
+/* --- Navigation (clean scrapbook strip) --- */
+.site-header {
+  background: rgba(255, 251, 249, 0.94);
+  border-bottom: 2px solid var(--ink);
+  box-shadow: 0 4px 0 var(--pink-accent);
+}
+
+.nav-links a {
+  color: var(--ink);
+  font-weight: 700;
+  border: 2px solid transparent;
+}
+
+.nav-links a:hover {
+  background: var(--bg-pastel);
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.nav-links a.active {
+  background: var(--ink);
+  color: var(--white);
+  box-shadow: 3px 3px 0 var(--pink-hot);
+}
+
+.nav-links .nav-cta {
+  border: 2px solid var(--ink);
+  background: var(--sticker-pink);
+}
+
+.nav-links .nav-cta:hover,
+.nav-links .nav-cta.active {
+  background: var(--pink-hot);
+  color: var(--white);
+  border-color: var(--ink);
+}
+
+.nav-toggle span {
+  background: var(--ink);
+}
+
+/* --- Stickers & labels --- */
+.section-eyebrow,
+.sticker-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--tape-yellow);
+  padding: 0.45rem 1rem;
+  border-radius: 4px;
+  border: 2px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+  transform: rotate(-2deg);
+}
+
+.sticker-label {
+  margin-bottom: var(--space-sm, 1rem);
+}
+
+/* --- Buttons (playful black outline) --- */
+.btn {
+  border: 2px solid var(--ink);
+  font-weight: 800;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--white);
+  box-shadow: 4px 4px 0 var(--pink-hot);
+}
+
+.btn-primary:hover {
+  background: var(--pink-hot);
+  color: var(--white);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-pastel);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.btn-outline {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.btn-outline:hover {
+  background: var(--ink);
+  color: var(--white);
+}
+
+.btn--scrapbook {
+  font-size: 1rem;
+  padding: 1rem 2rem;
+}
+
+/* --- Hero --- */
+.hero {
+  background: transparent;
+}
+
+.hero::before {
+  display: none;
+}
+
+.hero-text .badge {
+  background: var(--white);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--pink-accent);
+  transform: rotate(-1deg);
+}
+
+.hero-text h1 span {
+  color: var(--pink-hot);
+  font-style: normal;
+}
+
+.hero-visual::before {
+  background: var(--tape-pink);
+  border: 2px dashed var(--ink);
+  opacity: 0.6;
+}
+
+.hero-bouquet-img {
+  border: 3px solid var(--ink);
+  box-shadow: var(--shadow-lift);
+}
+
+/* --- Paper cards (intro, products) --- */
+.intro-card,
+.product-card,
+.form-card,
+.confirmation-card,
+.stat-card,
+.order-card-mobile,
+.table-wrapper {
+  background: var(--bg-paper);
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow-paper);
+}
+
+.intro-card::before {
+  background: var(--ink);
+  height: 3px;
+}
+
+.intro-card:hover,
+.product-card:hover {
+  transform: translateY(-6px) rotate(0.5deg);
+  box-shadow: var(--shadow-lift);
+}
+
+.intro-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+
+.product-body h3 {
+  font-weight: 800;
+}
+
+.product-price {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+}
+
+.product-card:hover .product-body h3 {
+  color: var(--pink-hot);
+}
+
+.section--white {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.section--cta {
+  background: var(--white);
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+
+.section-cta-text {
+  color: var(--ink-soft);
+}
+
+/* --- Page banner --- */
+.page-banner {
+  background: transparent;
+  padding: var(--space-xl, 3rem) 0;
+}
+
+.page-banner::before {
+  display: none;
+}
+
+.page-banner--scrapbook h1 {
+  position: relative;
+  display: inline-block;
+}
+
+.page-banner--scrapbook h1::after {
+  content: "♡";
+  position: absolute;
+  right: -1.5rem;
+  top: -0.5rem;
+  font-size: 1.5rem;
+  color: var(--pink-hot);
+  animation: wiggle 2s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(8deg); }
+}
+
+.page-banner p {
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+/* --- Filter bar --- */
+.filter-bar {
+  background: var(--white);
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.filter-btn.active {
+  background: var(--ink);
+  box-shadow: none;
+}
+
+/* --- Forms --- */
+.form-page {
+  background: transparent;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px var(--pink-accent);
+}
+
+.form-card h2,
+.confirmation-card {
+  border-color: var(--ink);
+}
+
+.confirmation-card {
+  border-width: 3px;
+}
+
+.confirmation-card::before {
+  background: linear-gradient(90deg, var(--pink-hot), var(--tape-yellow), var(--pink-hot));
+}
+
+/* --- Footer (soft scrapbook) --- */
+.site-footer {
+  background: var(--ink);
+  border-top: 4px solid var(--pink-hot);
+}
+
+.site-footer::before {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--pink-hot),
+    var(--pink-hot) 12px,
+    var(--tape-yellow) 12px,
+    var(--tape-yellow) 24px
+  );
+  height: 6px;
+}
+
+.footer-links h4 {
+  font-family: var(--font-display);
+  color: var(--sticker-pink);
+}
+
+/* ============================================================
+   SCRAPBOOK DECORATIONS (floating doodles)
+   ============================================================ */
+.scrapbook-deco {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.deco {
+  position: absolute;
+  user-select: none;
+}
+
+.deco-heart {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  color: var(--pink-hot);
+  opacity: 0.5;
+  animation: floatDeco 6s ease-in-out infinite;
+}
+
+.deco-1 { top: 18%; left: 4%; animation-delay: 0s; }
+.deco-2 { top: 72%; right: 6%; font-size: 1.5rem; animation-delay: 1s; }
+
+.deco-flower {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  opacity: 0.45;
+  animation: floatDeco 7s ease-in-out infinite;
+}
+
+.deco-3 { top: 42%; right: 8%; animation-delay: 0.5s; }
+.deco-4 { bottom: 22%; left: 7%; animation-delay: 2s; }
+
+.deco-coffee {
+  font-size: 2rem;
+  top: 28%;
+  right: 12%;
+  opacity: 0.35;
+  animation: floatDeco 5s ease-in-out infinite;
+}
+
+.deco-spark {
+  font-size: 1.75rem;
+  color: var(--ink);
+  opacity: 0.2;
+  bottom: 35%;
+  right: 4%;
+}
+
+.deco-tape {
+  width: 72px;
+  height: 26px;
+  border-radius: 2px;
+  opacity: 0.75;
+}
+
+.deco-tape-1 {
+  top: 12%;
+  right: 18%;
+  background: var(--tape-yellow);
+  transform: rotate(28deg);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.deco-tape-2 {
+  bottom: 18%;
+  left: 12%;
+  background: var(--tape-pink);
+  transform: rotate(-18deg);
+  width: 90px;
+}
+
+.deco-sticker {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: lowercase;
+  padding: 0.35rem 0.75rem;
+  background: var(--white);
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  box-shadow: 2px 2px 0 var(--ink);
+  color: var(--ink);
+}
+
+.deco-sticker-1 {
+  top: 55%;
+  left: 3%;
+  transform: rotate(-6deg);
+}
+
+.deco-sticker-2 {
+  top: 8%;
+  left: 22%;
+  transform: rotate(4deg);
+  background: var(--sticker-pink);
+}
+
+@keyframes floatDeco {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+/* ============================================================
+   WEEKLY EVENT BOARD — Pop-Up Schedule
+   ============================================================ */
+.page-schedule main {
+  position: relative;
+  z-index: 1;
+}
+
+.section--board {
+  padding-top: 0;
+}
+
+.board-header {
+  text-align: center;
+  margin-bottom: var(--space-xl, 2.5rem);
+}
+
+.board-week__label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.35rem;
+}
+
+.board-header h2 {
+  margin-bottom: 0.5rem;
+}
+
+.board-note {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+/* Event grid — weekly board layout */
+.event-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-lg, 2rem);
+  position: relative;
+}
+
+/* Individual event card — paper polaroid style */
+.event-card {
+  position: relative;
+  background: var(--bg-paper);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-scrap);
+  padding: 1.5rem 1.35rem 1.35rem;
+  box-shadow: var(--shadow-paper);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  min-height: 280px;
+}
+
+.event-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-lift);
+  z-index: 2;
+}
+
+.event-card--tilt-left {
+  transform: rotate(-1.5deg);
+}
+
+.event-card--tilt-right {
+  transform: rotate(1.2deg);
+}
+
+.event-card--tilt-left:hover {
+  transform: translateY(-8px) rotate(-0.5deg) scale(1.02);
+}
+
+.event-card--tilt-right:hover {
+  transform: translateY(-8px) rotate(0.5deg) scale(1.02);
+}
+
+.event-card--coffee {
+  background: linear-gradient(160deg, #fff9f5 0%, var(--bg-paper) 100%);
+}
+
+.event-card--coffee .event-doodle {
+  font-size: 2rem;
+}
+
+.event-card--past {
+  opacity: 0.72;
+  filter: grayscale(0.25);
+}
+
+.event-card--past:hover {
+  opacity: 0.85;
+}
+
+/* Washi tape on card */
+.card-tape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 88px;
+  height: 28px;
+  background: var(--tape-yellow);
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+}
+
+.card-tape--pink {
+  background: var(--tape-pink);
+  transform: translateX(-50%) rotate(3deg);
+}
+
+.card-tape--mint {
+  background: var(--tape-mint);
+  transform: translateX(-50%) rotate(-4deg);
+}
+
+/* Hand-drawn doodle on card */
+.event-doodle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.75rem;
+  line-height: 1;
+  opacity: 0.85;
+  transition: transform 0.35s ease;
+}
+
+.event-card:hover .event-doodle {
+  transform: scale(1.2) rotate(12deg);
+}
+
+/* Date block */
+.event-date-block {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px dashed rgba(26, 26, 26, 0.15);
+}
+
+.event-day {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+}
+
+.event-meta {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0.35rem;
+}
+
+.event-month {
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--pink-hot);
+}
+
+.event-dow {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.event-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.2;
+  color: var(--ink);
+  padding-right: 2rem;
+}
+
+.event-venue {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+
+.venue-icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+/* Rounded white time badge */
+.event-times {
+  margin-top: auto;
+  padding-top: 0.35rem;
+}
+
+.time-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 800;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--ink);
+  box-shadow: 2px 2px 0 rgba(26, 26, 26, 0.1);
+  letter-spacing: 0.02em;
+}
+
+/* Status sticker */
+.status-sticker {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  border: 2px solid var(--ink);
+  transform: rotate(4deg);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.status-sticker--open {
+  background: #d4f5dc;
+  color: var(--ink);
+}
+
+.status-sticker--limited {
+  background: var(--tape-yellow);
+  color: var(--ink);
+}
+
+.status-sticker--closed {
+  background: #e8e8e8;
+  color: var(--ink-soft);
+  transform: rotate(-3deg);
+}
+
+.board-cta {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hide old schedule cards if present elsewhere */
+.schedule-grid {
+  display: none;
+}
+
+/* --- Responsive event board --- */
+@media (max-width: 768px) {
+  .scrapbook-deco .deco-tape,
+  .scrapbook-deco .deco-sticker {
+    display: none;
+  }
+
+  .event-board {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .event-card--tilt-left,
+  .event-card--tilt-right {
+    transform: none;
+  }
+
+  .event-card--tilt-left:hover,
+  .event-card--tilt-right:hover {
+    transform: translateY(-6px) scale(1.01);
+  }
+
+  .page-banner--scrapbook h1::after {
+    right: -0.5rem;
+    top: -1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-day {
+    font-size: 2.5rem;
+  }
+
+  .event-title {
+    font-size: 1.15rem;
+  }
+}
+
+/* --- Site-wide scrapbook touches (all pages) --- */
+.scrapbook-site .floral-blob {
+  opacity: 0.25;
+  filter: blur(50px);
+}
+
+.scrapbook-site .intro-card {
+  position: relative;
+}
+
+.scrapbook-site .intro-card::after {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 18%;
+  width: 56px;
+  height: 20px;
+  background: var(--tape-yellow);
+  transform: rotate(-4deg);
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+.scrapbook-site .product-card {
+  position: relative;
+}
+
+.scrapbook-site .product-card::before {
+  content: "♡";
+  position: absolute;
+  top: 0.75rem;
+  right: 0.85rem;
+  z-index: 3;
+  font-size: 1.1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scrapbook-site .product-card:hover::before {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.scrapbook-site .section-header h2,
+.scrapbook-site .board-header h2 {
+  position: relative;
+}
+
+.scrapbook-site .form-card::before,
+.scrapbook-site .stat-card::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 24px;
+  width: 48px;
+  height: 18px;
+  background: var(--tape-pink);
+  transform: rotate(6deg);
+  border-radius: 2px;
+}
+
+.scrapbook-site .form-card,
+.scrapbook-site .stat-card {
+  position: relative;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deco-heart,
+  .deco-flower,
+  .deco-coffee,
+  .page-banner--scrapbook h1::after {
+    animation: none;
+  }
+
+  .hero-bouquet-img {
+    animation: none;
+  }
+}

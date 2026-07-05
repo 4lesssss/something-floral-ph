@@ -1,0 +1,16 @@
+# Something Floral PH — InfinityFree / Apache Deployment
+# Handles SPA routing and API passthrough
+
+RewriteEngine On
+
+# ── Pass /api/* requests to the PHP API router ──
+RewriteCond %{REQUEST_URI} ^/api/
+RewriteRule ^api/(.*)$ api/index.php [QSA,L]
+
+# ── Serve existing files and directories as-is ──
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# ── SPA fallback: all other routes → index.html ──
+RewriteRule ^ index.html [QSA,L]

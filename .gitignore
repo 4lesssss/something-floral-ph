@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+api/vendor/
+
+# Build output
+client/dist/
+
+# Secrets & environment
+api/config.php
+.env
+.env.*
+
+# Logs
+*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
