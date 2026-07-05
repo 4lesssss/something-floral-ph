@@ -430,6 +430,11 @@ h3 { font-size: clamp(1.35rem, 2.5vw, 1.65rem); }
   width: 100%;
 }
 
+.hero-text {
+  position: relative;
+  z-index: 2;
+}
+
 .hero-text .badge {
   display: inline-flex;
   align-items: center;

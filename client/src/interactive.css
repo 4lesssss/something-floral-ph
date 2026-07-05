@@ -113,13 +113,13 @@
 }
 
 .brand-logo--sidebar .brand-logo__tagline {
-  font-size: 0.6rem;
-  color: rgba(255, 250, 246, 0.65);
+  font-size: 0.7rem;
+  color: rgba(255, 250, 246, 0.75);
 }
 
 .brand-logo--sidebar .brand-logo__name {
   color: rgba(255, 250, 246, 0.95);
-  font-size: 0.95rem;
+  font-size: 1.15rem;
 }
 
 @keyframes petal-float {

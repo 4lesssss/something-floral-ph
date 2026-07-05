@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams, Link } from "react-router-dom";
 import { api } from "../api/client";
 import { useAuth } from "../context/AuthContext";
 import { formatPeso } from "../utils/format";
@@ -10,10 +10,90 @@ import { toast } from "../components/Toast";
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
 const PHONE_REGEX = /^09\d{9}$/;
 
+/* ── Sign-In Gate Modal ── */
+function SignInGate() {
+  return (
+    <div
+      style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 9999,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "rgba(0,0,0,0.45)",
+        backdropFilter: "blur(6px)",
+      }}
+    >
+      <div
+        style={{
+          background: "#fff",
+          borderRadius: "16px",
+          padding: "2.5rem 2rem",
+          maxWidth: "420px",
+          width: "90%",
+          textAlign: "center",
+          boxShadow: "0 20px 60px rgba(0,0,0,0.2)",
+          animation: "fadeInUp 0.35s ease",
+        }}
+      >
+        <div style={{ fontSize: "3rem", marginBottom: "0.5rem" }}>🔒</div>
+        <h2
+          style={{
+            margin: "0 0 0.5rem",
+            fontSize: "1.5rem",
+            color: "#7b2d3f",
+          }}
+        >
+          Sign In Required
+        </h2>
+        <p
+          style={{
+            color: "#666",
+            fontSize: "0.95rem",
+            lineHeight: 1.5,
+            marginBottom: "1.5rem",
+          }}
+        >
+          You need to be signed in to reserve a bouquet. Please log in to your
+          account or create a new one to continue.
+        </p>
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+          <Link
+            to="/login"
+            className="btn btn-primary"
+            style={{ width: "100%", textAlign: "center" }}
+          >
+            Sign In
+          </Link>
+          <Link
+            to="/signup"
+            className="btn btn-secondary"
+            style={{ width: "100%", textAlign: "center" }}
+          >
+            Create an Account
+          </Link>
+          <Link
+            to="/"
+            style={{
+              color: "#999",
+              fontSize: "0.85rem",
+              marginTop: "0.25rem",
+              textDecoration: "underline",
+            }}
+          >
+            ← Back to Home
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Reservation() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const { user, role } = useAuth();
+  const { user, role, loading } = useAuth();
   const [products, setProducts] = useState([]);
   const [submitting, setSubmitting] = useState(false);
   const [locations, setLocations] = useState([]);
@@ -154,8 +234,23 @@ export default function Reservation() {
     }
   };
 
+  const isSignedIn = !loading && user && role === "client";
+
+  if (loading) {
+    return (
+      <main className="form-page">
+        <section className="section">
+          <div className="container" style={{ textAlign: "center", padding: "4rem 0" }}>
+            <p>Loading...</p>
+          </div>
+        </section>
+      </main>
+    );
+  }
+
   return (
     <main className="form-page">
+      {!isSignedIn && <SignInGate />}
       <section className="section">
         <div className="container">
           <div className="form-card">

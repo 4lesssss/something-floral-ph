@@ -163,10 +163,10 @@ export default function AdminDashboard() {
             <div className="sidebar-user-info">
               <div className="sidebar-avatar sidebar-avatar--admin">A</div>
               <div>
-                <div style={{ fontWeight: 700, color: "rgba(255,250,246,0.95)", fontSize: "0.85rem" }}>
+                <div style={{ fontWeight: 700, color: "rgba(255,250,246,0.95)", fontSize: "1.05rem" }}>
                   {adminName.charAt(0).toUpperCase() + adminName.slice(1)}
                 </div>
-                <div style={{ fontSize: "0.72rem", color: "rgba(255,250,246,0.55)" }}>Administrator</div>
+                <div style={{ fontSize: "0.85rem", color: "rgba(255,250,246,0.65)" }}>Administrator</div>
               </div>
             </div>
             <button type="button" className="btn-logout" onClick={handleLogout}>
