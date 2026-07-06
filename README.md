@@ -39,20 +39,6 @@ something-floral-ph/
 └── images/          # Product photos & logo
 ```
 
-### React routes (replaces old HTML files)
-
-| Old file | React route |
-|----------|-------------|
-| `index.html` | `/` |
-| `gallery.html` | `/gallery` |
-| `schedule.html` | `/schedule` |
-| `reservation.html` | `/reserve` |
-| `confirmation.html` | `/confirmation/:orderId?` |
-| `client-login.html` | `/account/login` |
-| `client-signup.html` | `/account/signup` |
-| `client-dashboard.html` | `/account/dashboard` |
-| `admin-login.html` | `/admin/login` |
-| `admin-dashboard.html` | `/admin/dashboard` |
 
 ## Images
 
